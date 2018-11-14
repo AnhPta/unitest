@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/anhpta/Sites/hrmapitest/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/style.css" rel="stylesheet" type="text/css">
+  <link href=".css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/home/anhpta/Sites/hrmapitest/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Events/ExampleEvent.php.html#5">App\Events\ExampleEvent</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/UserTransformer.php.html#8">App\Http\Transformers\UserTransformer</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/FilterTrait.php.html#4">FilterTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#15">App\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/UserRepository.php.html#9">App\Repositories\Users\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Roles/RoleRepository.php.html#7">App\Repositories\Roles\RoleRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Roles/Role.php.html#7">App\Repositories\Roles\Role</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Positions/Position.php.html#8">App\Repositories\Positions\Position</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#7">App\Providers\AppServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/UserPolicy.php.html#8">App\Policies\UserPolicy</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/RolePolicy.php.html#9">App\Policies\RolePolicy</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/PositionPolicy.php.html#9">App\Policies\PositionPolicy</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Listeners/ExampleListener.php.html#9">App\Listeners\ExampleListener</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#16">App\Exceptions\Handler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/ExampleJob.php.html#5">App\Jobs\ExampleJob</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/RoleTransformer.php.html#8">App\Http\Transformers\RoleTransformer</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RegisterController.php.html#10">App\Http\Controllers\Api\RegisterController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/LoginController.php.html#9">App\Http\Controllers\Api\LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PermissionController.php.html#5">App\Http\Controllers\API\PermissionController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#9">App\Http\Controllers\Api\ProfileController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#9">App\Http\Controllers\Api\RoleController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#9">App\Http\Controllers\Api\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#8">App\Http\Middleware\Authenticate</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/ExampleMiddleware.php.html#7">App\Http\Middleware\ExampleMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/FooTransformer.php.html#8">App\Http\Transformers\FooTransformer</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/PresentationTrait.php.html#4">PresentationTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Positions/PositionRepository.php.html#7">App\Repositories\Positions\PositionRepository</a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="Http/Transformers/PositionTransformer.php.html#9">App\Http\Transformers\PositionTransformer</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Http/Controllers/Response/ResponseHandler.php.html#7">ResponseHandler</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#4">App\Repositories\BaseRepository</a></td><td class="text-right">68%</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#12">App\Http\Transformers\OptimusPrime</a></td><td class="text-right">76%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#10">App\Http\Controllers\Api\PositionController</a></td><td class="text-right">79%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#9">App\Http\Controllers\Api\UserController</a></td><td class="text-right">380</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#9">App\Http\Controllers\Api\RoleController</a></td><td class="text-right">380</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#9">App\Http\Controllers\Api\ProfileController</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#16">App\Exceptions\Handler</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Http/Controllers/Api/LoginController.php.html#9">App\Http\Controllers\Api\LoginController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="User.php.html#15">App\User</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RegisterController.php.html#10">App\Http\Controllers\Api\RegisterController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Repositories/Users/PresentationTrait.php.html#4">PresentationTrait</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#4">App\Repositories\BaseRepository</a></td><td class="text-right">28</td></tr>
+       <tr><td><a href="Http/Transformers/RoleTransformer.php.html#8">App\Http\Transformers\RoleTransformer</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Transformers/UserTransformer.php.html#8">App\Http\Transformers\UserTransformer</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#10">App\Http\Controllers\Api\PositionController</a></td><td class="text-right">16</td></tr>
+       <tr><td><a href="Http/Controllers/Response/ResponseHandler.php.html#7">ResponseHandler</a></td><td class="text-right">15</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#8">App\Http\Middleware\Authenticate</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Transformers/PositionTransformer.php.html#9">App\Http\Transformers\PositionTransformer</a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#12">App\Http\Transformers\OptimusPrime</a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Repositories/Positions/PositionRepository.php.html#7">App\Repositories\Positions\PositionRepository</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/FooTransformer.php.html#8">App\Http\Transformers\FooTransformer</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Users/FilterTrait.php.html#4">FilterTrait</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Events/ExampleEvent.php.html#12"><abbr title="App\Events\ExampleEvent::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/RolePolicy.php.html#31"><abbr title="App\Policies\RolePolicy::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/UserPolicy.php.html#54"><abbr title="App\Policies\UserPolicy::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/UserPolicy.php.html#42"><abbr title="App\Policies\UserPolicy::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/UserPolicy.php.html#30"><abbr title="App\Policies\UserPolicy::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/UserPolicy.php.html#19"><abbr title="App\Policies\UserPolicy::view">view</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/RolePolicy.php.html#55"><abbr title="App\Policies\RolePolicy::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/RolePolicy.php.html#43"><abbr title="App\Policies\RolePolicy::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/RolePolicy.php.html#20"><abbr title="App\Policies\RolePolicy::view">view</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#40"><abbr title="App\Providers\AuthServiceProvider::policies">policies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/PositionPolicy.php.html#55"><abbr title="App\Policies\PositionPolicy::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/PositionPolicy.php.html#43"><abbr title="App\Policies\PositionPolicy::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/PositionPolicy.php.html#31"><abbr title="App\Policies\PositionPolicy::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Policies/PositionPolicy.php.html#20"><abbr title="App\Policies\PositionPolicy::view">view</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Listeners/ExampleListener.php.html#27"><abbr title="App\Listeners\ExampleListener::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Listeners/ExampleListener.php.html#16"><abbr title="App\Listeners\ExampleListener::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/ExampleJob.php.html#22"><abbr title="App\Jobs\ExampleJob::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#14"><abbr title="App\Providers\AppServiceProvider::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#19"><abbr title="App\Repositories\BaseRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/UserTransformer.php.html#28"><abbr title="App\Http\Transformers\UserTransformer::includeRoles">includeRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/UserRepository.php.html#24"><abbr title="App\Repositories\Users\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/PresentationTrait.php.html#26"><abbr title="PresentationTrait::inRole">inRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/PresentationTrait.php.html#11"><abbr title="PresentationTrait::hasAccess">hasAccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/FilterTrait.php.html#6"><abbr title="FilterTrait::scopeQ">scopeQ</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#59"><abbr title="App\User::findForPassport">findForPassport</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#50"><abbr title="App\User::validateForPassportPasswordGrant">validateForPassportPasswordGrant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#45"><abbr title="App\User::roles">roles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#37"><abbr title="App\User::setPasswordAttribute">setPasswordAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Roles/RoleRepository.php.html#24"><abbr title="App\Repositories\Roles\RoleRepository::getBySlug">getBySlug</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#82"><abbr title="App\Repositories\BaseRepository::getByIdInTrash">getByIdInTrash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Roles/RoleRepository.php.html#19"><abbr title="App\Repositories\Roles\RoleRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Roles/Role.php.html#27"><abbr title="App\Repositories\Roles\Role::users">users</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Positions/PositionRepository.php.html#38"><abbr title="App\Repositories\Positions\PositionRepository::changeStatus">changeStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Positions/Position.php.html#36"><abbr title="App\Repositories\Positions\Position::employees">employees</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#160"><abbr title="App\Repositories\BaseRepository::restore">restore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#148"><abbr title="App\Repositories\BaseRepository::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#104"><abbr title="App\Repositories\BaseRepository::storeArray">storeArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#38"><abbr title="App\Exceptions\Handler::report">report</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/ExampleJob.php.html#12"><abbr title="App\Jobs\ExampleJob::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/UserTransformer.php.html#14"><abbr title="App\Http\Transformers\UserTransformer::transform">transform</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RegisterController.php.html#36"><abbr title="App\Http\Controllers\Api\RegisterController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/RoleTransformer.php.html#28"><abbr title="App\Http\Transformers\RoleTransformer::includeUsers">includeUsers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#48"><abbr title="App\Http\Controllers\Api\RoleController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#36"><abbr title="App\Http\Controllers\Api\RoleController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#25"><abbr title="App\Http\Controllers\Api\RoleController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RegisterController.php.html#47"><abbr title="App\Http\Controllers\Api\RegisterController::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RegisterController.php.html#42"><abbr title="App\Http\Controllers\Api\RegisterController::getResource">getResource</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#67"><abbr title="App\Http\Controllers\Api\ProfileController::changePassword">changePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#82"><abbr title="App\Http\Controllers\Api\RoleController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#45"><abbr title="App\Http\Controllers\Api\ProfileController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#40"><abbr title="App\Http\Controllers\Api\ProfileController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#29"><abbr title="App\Http\Controllers\Api\ProfileController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PermissionController.php.html#11"><abbr title="App\Http\Controllers\API\PermissionController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/LoginController.php.html#24"><abbr title="App\Http\Controllers\Api\LoginController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#50"><abbr title="App\Exceptions\Handler::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#62"><abbr title="App\Http\Controllers\Api\RoleController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/Users/PresentationTrait.php.html#35"><abbr title="PresentationTrait::isSuperAdmin">isSuperAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#104"><abbr title="App\Http\Controllers\Api\RoleController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#23"><abbr title="App\Http\Middleware\Authenticate::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#29"><abbr title="App\Http\Transformers\OptimusPrime::setIncludes">setIncludes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#29"><abbr title="App\Http\Controllers\Api\UserController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/FooTransformer.php.html#13"><abbr title="App\Http\Transformers\FooTransformer::transform">transform</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/ExampleMiddleware.php.html#16"><abbr title="App\Http\Middleware\ExampleMiddleware::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#36"><abbr title="App\Http\Middleware\Authenticate::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#110"><abbr title="App\Http\Controllers\Api\UserController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/PositionTransformer.php.html#38"><abbr title="App\Http\Transformers\PositionTransformer::includeEmployees">includeEmployees</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#86"><abbr title="App\Http\Controllers\Api\UserController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#66"><abbr title="App\Http\Controllers\Api\UserController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#52"><abbr title="App\Http\Controllers\Api\UserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Transformers/RoleTransformer.php.html#14"><abbr title="App\Http\Transformers\RoleTransformer::transform">transform</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#40"><abbr title="App\Http\Controllers\Api\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Response/ResponseHandler.php.html#74"><abbr title="ResponseHandler::transform">transform</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Http/Controllers/Response/ResponseHandler.php.html#16"><abbr title="ResponseHandler::successResponse">successResponse</abbr></a></td><td class="text-right">53%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#44"><abbr title="App\Http\Controllers\Api\PositionController::show">show</abbr></a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#22"><abbr title="App\Http\Transformers\OptimusPrime::parseIncludes">parseIncludes</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#97"><abbr title="App\Http\Controllers\Api\PositionController::destroy">destroy</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#67"><abbr title="App\Repositories\BaseRepository::getById">getById</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Http/Transformers/PositionTransformer.php.html#15"><abbr title="App\Http\Transformers\PositionTransformer::transform">transform</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#56"><abbr title="App\Http\Controllers\Api\PositionController::store">store</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#116"><abbr title="App\Repositories\BaseRepository::update">update</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#75"><abbr title="App\Http\Controllers\Api\PositionController::update">update</abbr></a></td><td class="text-right">84%</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#32"><abbr title="App\Repositories\BaseRepository::getByQuery">getByQuery</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#34"><abbr title="App\Http\Transformers\OptimusPrime::transform">transform</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Exceptions/Handler.php.html#50"><abbr title="App\Exceptions\Handler::render">render</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Http/Controllers/Api/LoginController.php.html#24"><abbr title="App\Http\Controllers\Api\LoginController::login">login</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#82"><abbr title="App\Http\Controllers\Api\RoleController::update">update</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#86"><abbr title="App\Http\Controllers\Api\UserController::update">update</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#45"><abbr title="App\Http\Controllers\Api\ProfileController::update">update</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#67"><abbr title="App\Http\Controllers\Api\ProfileController::changePassword">changePassword</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RegisterController.php.html#47"><abbr title="App\Http\Controllers\Api\RegisterController::register">register</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#110"><abbr title="App\Http\Controllers\Api\UserController::destroy">destroy</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#66"><abbr title="App\Http\Controllers\Api\UserController::store">store</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/UserController.php.html#52"><abbr title="App\Http\Controllers\Api\UserController::show">show</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#104"><abbr title="App\Http\Controllers\Api\RoleController::destroy">destroy</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Repositories/Users/PresentationTrait.php.html#11"><abbr title="PresentationTrait::hasAccess">hasAccess</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#62"><abbr title="App\Http\Controllers\Api\RoleController::store">store</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/RoleController.php.html#48"><abbr title="App\Http\Controllers\Api\RoleController::show">show</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="User.php.html#50"><abbr title="App\User::validateForPassportPasswordGrant">validateForPassportPasswordGrant</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#32"><abbr title="App\Repositories\BaseRepository::getByQuery">getByQuery</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/RoleTransformer.php.html#14"><abbr title="App\Http\Transformers\RoleTransformer::transform">transform</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Users/FilterTrait.php.html#6"><abbr title="FilterTrait::scopeQ">scopeQ</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#59"><abbr title="App\User::findForPassport">findForPassport</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/Positions/PositionRepository.php.html#38"><abbr title="App\Repositories\Positions\PositionRepository::changeStatus">changeStatus</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/UserTransformer.php.html#28"><abbr title="App\Http\Transformers\UserTransformer::includeRoles">includeRoles</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/UserTransformer.php.html#14"><abbr title="App\Http\Transformers\UserTransformer::transform">transform</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/RoleTransformer.php.html#28"><abbr title="App\Http\Transformers\RoleTransformer::includeUsers">includeUsers</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/PositionTransformer.php.html#38"><abbr title="App\Http\Transformers\PositionTransformer::includeEmployees">includeEmployees</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#36"><abbr title="App\Http\Middleware\Authenticate::handle">handle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Transformers/FooTransformer.php.html#13"><abbr title="App\Http\Transformers\FooTransformer::transform">transform</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Response/ResponseHandler.php.html#74"><abbr title="ResponseHandler::transform">transform</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Controllers/Response/ResponseHandler.php.html#16"><abbr title="ResponseHandler::successResponse">successResponse</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Transformers/PositionTransformer.php.html#15"><abbr title="App\Http\Transformers\PositionTransformer::transform">transform</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#75"><abbr title="App\Http\Controllers\Api\PositionController::update">update</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#44"><abbr title="App\Http\Controllers\Api\PositionController::show">show</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#67"><abbr title="App\Repositories\BaseRepository::getById">getById</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#97"><abbr title="App\Http\Controllers\Api\PositionController::destroy">destroy</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PositionController.php.html#56"><abbr title="App\Http\Controllers\Api\PositionController::store">store</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#34"><abbr title="App\Http\Transformers\OptimusPrime::transform">transform</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Transformers/OptimusPrime.php.html#22"><abbr title="App\Http\Transformers\OptimusPrime::parseIncludes">parseIncludes</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Repositories/BaseRepository.php.html#116"><abbr title="App\Repositories\BaseRepository::update">update</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.1.24-1+ubuntu16.04.1+deb.sury.org+1</a> with <a href="https://xdebug.org/">Xdebug 2.6.1</a> and <a href="https://phpunit.de/">PHPUnit 7.4.3</a> at Wed Nov 14 8:43:13 UTC 2018.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([26,0,0,0,0,1,0,3,2,0,1,7], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([71,0,0,0,1,0,1,4,1,5,0,18], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Console\/Kernel.php.html#8\">App\\Console\\Kernel<\/a>"],[100,0,"<a href=\"Events\/Event.php.html#7\">App\\Events\\Event<\/a>"],[0,1,"<a href=\"Events\/ExampleEvent.php.html#5\">App\\Events\\ExampleEvent<\/a>"],[0,10,"<a href=\"Exceptions\/Handler.php.html#16\">App\\Exceptions\\Handler<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Api\/ApiController.php.html#8\">App\\Http\\Controllers\\Api\\ApiController<\/a>"],[0,7,"<a href=\"Http\/Controllers\/Api\/LoginController.php.html#9\">App\\Http\\Controllers\\Api\\LoginController<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/PermissionController.php.html#5\">App\\Http\\Controllers\\API\\PermissionController<\/a>"],[79.48717948717949,15,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#10\">App\\Http\\Controllers\\Api\\PositionController<\/a>"],[0,12,"<a href=\"Http\/Controllers\/Api\/ProfileController.php.html#9\">App\\Http\\Controllers\\Api\\ProfileController<\/a>"],[0,7,"<a href=\"Http\/Controllers\/Api\/RegisterController.php.html#10\">App\\Http\\Controllers\\Api\\RegisterController<\/a>"],[0,19,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#9\">App\\Http\\Controllers\\Api\\RoleController<\/a>"],[0,19,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#9\">App\\Http\\Controllers\\Api\\UserController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#7\">App\\Http\\Controllers\\Controller<\/a>"],[0,3,"<a href=\"Http\/Middleware\/Authenticate.php.html#8\">App\\Http\\Middleware\\Authenticate<\/a>"],[0,1,"<a href=\"Http\/Middleware\/ExampleMiddleware.php.html#7\">App\\Http\\Middleware\\ExampleMiddleware<\/a>"],[0,2,"<a href=\"Http\/Transformers\/FooTransformer.php.html#8\">App\\Http\\Transformers\\FooTransformer<\/a>"],[76.47058823529412,7,"<a href=\"Http\/Transformers\/OptimusPrime.php.html#12\">App\\Http\\Transformers\\OptimusPrime<\/a>"],[60,6,"<a href=\"Http\/Transformers\/PositionTransformer.php.html#9\">App\\Http\\Transformers\\PositionTransformer<\/a>"],[0,4,"<a href=\"Http\/Transformers\/RoleTransformer.php.html#8\">App\\Http\\Transformers\\RoleTransformer<\/a>"],[0,4,"<a href=\"Http\/Transformers\/UserTransformer.php.html#8\">App\\Http\\Transformers\\UserTransformer<\/a>"],[0,2,"<a href=\"Jobs\/ExampleJob.php.html#5\">App\\Jobs\\ExampleJob<\/a>"],[100,0,"<a href=\"Jobs\/Job.php.html#10\">App\\Jobs\\Job<\/a>"],[0,2,"<a href=\"Listeners\/ExampleListener.php.html#9\">App\\Listeners\\ExampleListener<\/a>"],[0,4,"<a href=\"Policies\/PositionPolicy.php.html#9\">App\\Policies\\PositionPolicy<\/a>"],[0,4,"<a href=\"Policies\/RolePolicy.php.html#9\">App\\Policies\\RolePolicy<\/a>"],[0,4,"<a href=\"Policies\/UserPolicy.php.html#8\">App\\Policies\\UserPolicy<\/a>"],[0,1,"<a href=\"Providers\/AppServiceProvider.php.html#7\">App\\Providers\\AppServiceProvider<\/a>"],[96.15384615384616,7,"<a href=\"Providers\/AuthServiceProvider.php.html#10\">App\\Providers\\AuthServiceProvider<\/a>"],[100,0,"<a href=\"Providers\/EventServiceProvider.php.html#7\">App\\Providers\\EventServiceProvider<\/a>"],[68.57142857142857,18,"<a href=\"Repositories\/BaseRepository.php.html#4\">App\\Repositories\\BaseRepository<\/a>"],[100,3,"<a href=\"Repositories\/Entity.php.html#6\">App\\Repositories\\Entity<\/a>"],[0,1,"<a href=\"Repositories\/Positions\/Position.php.html#8\">App\\Repositories\\Positions\\Position<\/a>"],[42.857142857142854,4,"<a href=\"Repositories\/Positions\/PositionRepository.php.html#7\">App\\Repositories\\Positions\\PositionRepository<\/a>"],[0,1,"<a href=\"Repositories\/Roles\/Role.php.html#7\">App\\Repositories\\Roles\\Role<\/a>"],[0,2,"<a href=\"Repositories\/Roles\/RoleRepository.php.html#7\">App\\Repositories\\Roles\\RoleRepository<\/a>"],[0,1,"<a href=\"Repositories\/Users\/UserRepository.php.html#9\">App\\Repositories\\Users\\UserRepository<\/a>"],[0,7,"<a href=\"User.php.html#15\">App\\User<\/a>"],[66.66666666666666,11,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#7\">ResponseHandler<\/a>"],[0,2,"<a href=\"Repositories\/Users\/FilterTrait.php.html#4\">FilterTrait<\/a>"],[0,6,"<a href=\"Repositories\/Users\/PresentationTrait.php.html#4\">PresentationTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Console\/Kernel.php.html#25\">App\\Console\\Kernel::schedule<\/a>"],[0,1,"<a href=\"Events\/ExampleEvent.php.html#12\">App\\Events\\ExampleEvent::__construct<\/a>"],[0,1,"<a href=\"Exceptions\/Handler.php.html#38\">App\\Exceptions\\Handler::report<\/a>"],[0,9,"<a href=\"Exceptions\/Handler.php.html#50\">App\\Exceptions\\Handler::render<\/a>"],[0,7,"<a href=\"Http\/Controllers\/Api\/LoginController.php.html#24\">App\\Http\\Controllers\\Api\\LoginController::login<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/PermissionController.php.html#11\">App\\Http\\Controllers\\API\\PermissionController::index<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#26\">App\\Http\\Controllers\\Api\\PositionController::__construct<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#37\">App\\Http\\Controllers\\Api\\PositionController::index<\/a>"],[60,3,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#44\">App\\Http\\Controllers\\Api\\PositionController::show<\/a>"],[80,3,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#56\">App\\Http\\Controllers\\Api\\PositionController::store<\/a>"],[84.61538461538461,4,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#75\">App\\Http\\Controllers\\Api\\PositionController::update<\/a>"],[66.66666666666666,3,"<a href=\"Http\/Controllers\/Api\/PositionController.php.html#97\">App\\Http\\Controllers\\Api\\PositionController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/ProfileController.php.html#29\">App\\Http\\Controllers\\Api\\ProfileController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/ProfileController.php.html#40\">App\\Http\\Controllers\\Api\\ProfileController::index<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/ProfileController.php.html#45\">App\\Http\\Controllers\\Api\\ProfileController::update<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/ProfileController.php.html#67\">App\\Http\\Controllers\\Api\\ProfileController::changePassword<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/RegisterController.php.html#36\">App\\Http\\Controllers\\Api\\RegisterController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/RegisterController.php.html#42\">App\\Http\\Controllers\\Api\\RegisterController::getResource<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/RegisterController.php.html#47\">App\\Http\\Controllers\\Api\\RegisterController::register<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#25\">App\\Http\\Controllers\\Api\\RoleController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#36\">App\\Http\\Controllers\\Api\\RoleController::index<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#48\">App\\Http\\Controllers\\Api\\RoleController::show<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#62\">App\\Http\\Controllers\\Api\\RoleController::store<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#82\">App\\Http\\Controllers\\Api\\RoleController::update<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/RoleController.php.html#104\">App\\Http\\Controllers\\Api\\RoleController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#29\">App\\Http\\Controllers\\Api\\UserController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#40\">App\\Http\\Controllers\\Api\\UserController::index<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#52\">App\\Http\\Controllers\\Api\\UserController::show<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#66\">App\\Http\\Controllers\\Api\\UserController::store<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#86\">App\\Http\\Controllers\\Api\\UserController::update<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/UserController.php.html#110\">App\\Http\\Controllers\\Api\\UserController::destroy<\/a>"],[0,1,"<a href=\"Http\/Middleware\/Authenticate.php.html#23\">App\\Http\\Middleware\\Authenticate::__construct<\/a>"],[0,2,"<a href=\"Http\/Middleware\/Authenticate.php.html#36\">App\\Http\\Middleware\\Authenticate::handle<\/a>"],[0,1,"<a href=\"Http\/Middleware\/ExampleMiddleware.php.html#16\">App\\Http\\Middleware\\ExampleMiddleware::handle<\/a>"],[0,2,"<a href=\"Http\/Transformers\/FooTransformer.php.html#13\">App\\Http\\Transformers\\FooTransformer::transform<\/a>"],[100,1,"<a href=\"Http\/Transformers\/OptimusPrime.php.html#16\">App\\Http\\Transformers\\OptimusPrime::__construct<\/a>"],[66.66666666666666,2,"<a href=\"Http\/Transformers\/OptimusPrime.php.html#22\">App\\Http\\Transformers\\OptimusPrime::parseIncludes<\/a>"],[0,1,"<a href=\"Http\/Transformers\/OptimusPrime.php.html#29\">App\\Http\\Transformers\\OptimusPrime::setIncludes<\/a>"],[88.88888888888889,3,"<a href=\"Http\/Transformers\/OptimusPrime.php.html#34\">App\\Http\\Transformers\\OptimusPrime::transform<\/a>"],[75,4,"<a href=\"Http\/Transformers\/PositionTransformer.php.html#15\">App\\Http\\Transformers\\PositionTransformer::transform<\/a>"],[0,2,"<a href=\"Http\/Transformers\/PositionTransformer.php.html#38\">App\\Http\\Transformers\\PositionTransformer::includeEmployees<\/a>"],[0,2,"<a href=\"Http\/Transformers\/RoleTransformer.php.html#14\">App\\Http\\Transformers\\RoleTransformer::transform<\/a>"],[0,2,"<a href=\"Http\/Transformers\/RoleTransformer.php.html#28\">App\\Http\\Transformers\\RoleTransformer::includeUsers<\/a>"],[0,2,"<a href=\"Http\/Transformers\/UserTransformer.php.html#14\">App\\Http\\Transformers\\UserTransformer::transform<\/a>"],[0,2,"<a href=\"Http\/Transformers\/UserTransformer.php.html#28\">App\\Http\\Transformers\\UserTransformer::includeRoles<\/a>"],[0,1,"<a href=\"Jobs\/ExampleJob.php.html#12\">App\\Jobs\\ExampleJob::__construct<\/a>"],[0,1,"<a href=\"Jobs\/ExampleJob.php.html#22\">App\\Jobs\\ExampleJob::handle<\/a>"],[0,1,"<a href=\"Listeners\/ExampleListener.php.html#16\">App\\Listeners\\ExampleListener::__construct<\/a>"],[0,1,"<a href=\"Listeners\/ExampleListener.php.html#27\">App\\Listeners\\ExampleListener::handle<\/a>"],[0,1,"<a href=\"Policies\/PositionPolicy.php.html#20\">App\\Policies\\PositionPolicy::view<\/a>"],[0,1,"<a href=\"Policies\/PositionPolicy.php.html#31\">App\\Policies\\PositionPolicy::create<\/a>"],[0,1,"<a href=\"Policies\/PositionPolicy.php.html#43\">App\\Policies\\PositionPolicy::update<\/a>"],[0,1,"<a href=\"Policies\/PositionPolicy.php.html#55\">App\\Policies\\PositionPolicy::delete<\/a>"],[0,1,"<a href=\"Policies\/RolePolicy.php.html#20\">App\\Policies\\RolePolicy::view<\/a>"],[0,1,"<a href=\"Policies\/RolePolicy.php.html#31\">App\\Policies\\RolePolicy::create<\/a>"],[0,1,"<a href=\"Policies\/RolePolicy.php.html#43\">App\\Policies\\RolePolicy::update<\/a>"],[0,1,"<a href=\"Policies\/RolePolicy.php.html#55\">App\\Policies\\RolePolicy::delete<\/a>"],[0,1,"<a href=\"Policies\/UserPolicy.php.html#19\">App\\Policies\\UserPolicy::view<\/a>"],[0,1,"<a href=\"Policies\/UserPolicy.php.html#30\">App\\Policies\\UserPolicy::create<\/a>"],[0,1,"<a href=\"Policies\/UserPolicy.php.html#42\">App\\Policies\\UserPolicy::update<\/a>"],[0,1,"<a href=\"Policies\/UserPolicy.php.html#54\">App\\Policies\\UserPolicy::delete<\/a>"],[0,1,"<a href=\"Providers\/AppServiceProvider.php.html#14\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,2,"<a href=\"Providers\/AuthServiceProvider.php.html#28\">App\\Providers\\AuthServiceProvider::registerPolicies<\/a>"],[0,1,"<a href=\"Providers\/AuthServiceProvider.php.html#40\">App\\Providers\\AuthServiceProvider::policies<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#50\">App\\Providers\\AuthServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#59\">App\\Providers\\AuthServiceProvider::registerPassport<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#70\">App\\Providers\\AuthServiceProvider::registerGates<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#94\">App\\Providers\\AuthServiceProvider::boot<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#19\">App\\Repositories\\BaseRepository::getAll<\/a>"],[87.5,6,"<a href=\"Repositories\/BaseRepository.php.html#32\">App\\Repositories\\BaseRepository::getByQuery<\/a>"],[66.66666666666666,3,"<a href=\"Repositories\/BaseRepository.php.html#67\">App\\Repositories\\BaseRepository::getById<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#82\">App\\Repositories\\BaseRepository::getByIdInTrash<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#94\">App\\Repositories\\BaseRepository::store<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#104\">App\\Repositories\\BaseRepository::storeArray<\/a>"],[83.33333333333334,2,"<a href=\"Repositories\/BaseRepository.php.html#116\">App\\Repositories\\BaseRepository::update<\/a>"],[100,1,"<a href=\"Repositories\/BaseRepository.php.html#136\">App\\Repositories\\BaseRepository::delete<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#148\">App\\Repositories\\BaseRepository::destroy<\/a>"],[0,1,"<a href=\"Repositories\/BaseRepository.php.html#160\">App\\Repositories\\BaseRepository::restore<\/a>"],[100,3,"<a href=\"Repositories\/Entity.php.html#15\">App\\Repositories\\Entity::scopeSort<\/a>"],[0,1,"<a href=\"Repositories\/Positions\/Position.php.html#36\">App\\Repositories\\Positions\\Position::employees<\/a>"],[100,1,"<a href=\"Repositories\/Positions\/PositionRepository.php.html#19\">App\\Repositories\\Positions\\PositionRepository::__construct<\/a>"],[100,1,"<a href=\"Repositories\/Positions\/PositionRepository.php.html#28\">App\\Repositories\\Positions\\PositionRepository::getAllStatus<\/a>"],[0,2,"<a href=\"Repositories\/Positions\/PositionRepository.php.html#38\">App\\Repositories\\Positions\\PositionRepository::changeStatus<\/a>"],[0,1,"<a href=\"Repositories\/Roles\/Role.php.html#27\">App\\Repositories\\Roles\\Role::users<\/a>"],[0,1,"<a href=\"Repositories\/Roles\/RoleRepository.php.html#19\">App\\Repositories\\Roles\\RoleRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/Roles\/RoleRepository.php.html#24\">App\\Repositories\\Roles\\RoleRepository::getBySlug<\/a>"],[0,1,"<a href=\"Repositories\/Users\/UserRepository.php.html#24\">App\\Repositories\\Users\\UserRepository::__construct<\/a>"],[0,1,"<a href=\"User.php.html#37\">App\\User::setPasswordAttribute<\/a>"],[0,1,"<a href=\"User.php.html#45\">App\\User::roles<\/a>"],[0,3,"<a href=\"User.php.html#50\">App\\User::validateForPassportPasswordGrant<\/a>"],[0,2,"<a href=\"User.php.html#59\">App\\User::findForPassport<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#11\">ResponseHandler::setTransformer<\/a>"],[53.84615384615385,4,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#16\">ResponseHandler::successResponse<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#41\">ResponseHandler::notFoundResponse<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#52\">ResponseHandler::deleteResponse<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#63\">ResponseHandler::errorResponse<\/a>"],[33.33333333333333,3,"<a href=\"Http\/Controllers\/Response\/ResponseHandler.php.html#74\">ResponseHandler::transform<\/a>"],[0,2,"<a href=\"Repositories\/Users\/FilterTrait.php.html#6\">FilterTrait::scopeQ<\/a>"],[0,4,"<a href=\"Repositories\/Users\/PresentationTrait.php.html#11\">PresentationTrait::hasAccess<\/a>"],[0,1,"<a href=\"Repositories\/Users\/PresentationTrait.php.html#26\">PresentationTrait::inRole<\/a>"],[0,1,"<a href=\"Repositories\/Users\/PresentationTrait.php.html#35\">PresentationTrait::isSuperAdmin<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
