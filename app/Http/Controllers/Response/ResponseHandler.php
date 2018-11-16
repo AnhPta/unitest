@@ -15,10 +15,6 @@ trait ResponseHandler
 
     protected function successResponse($data, $transform = true)
     {
-        if (is_null($data)) {
-            $data = [];
-        }
-
         if (property_exists($this, 'useTransform')) {
             $transform = $this->useTransform;
         }

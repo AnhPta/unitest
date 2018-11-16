@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api\RestFulls;
+namespace Tests\Feature\Api;
 
 use TestCase;
 // use Traits\JWTAuth;
@@ -292,7 +292,7 @@ abstract class RestFull extends TestCase
     //     ];
     // }
 
-        /**
+    /**
      * test not authen return 401
      * @dataProvider restfulEndpoidProvider
      * @param  array     $permissions permission list

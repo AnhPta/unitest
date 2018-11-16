@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api\RestFulls;
+namespace Tests\Feature\Api;
 
 class PositionRestFullTest extends RestFull
 {
