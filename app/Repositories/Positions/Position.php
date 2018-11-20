@@ -33,8 +33,8 @@ class Position extends Entity
     /**
      * Relationship with Employee
      */
-    public function employees()
-    {
-        return $this->belongsToMany(\App\Repositories\Employees\Employee::class, 'department_employee');
-    }
+    // public function employees()
+    // {
+    //     return $this->belongsToMany(\App\Repositories\Employees\Employee::class, 'department_employee');
+    // }
 }

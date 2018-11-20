@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace Tests\Feature\Api\RestFulls;
 
 use TestCase;
 // use Traits\JWTAuth;
@@ -11,12 +11,45 @@ abstract class RestFull extends TestCase
     use DatabaseMigrations;
 
     /**
-     * seeder data insert, update,show
+     * url endpoint
+     * @var [type]
+     */
+    protected $endpoint;
+    /**
+     * model class
+     * @var string
+     */
+    protected $model;
+    /**
+     * table
+     * @var string
+     */
+    protected $table;
+    /**
+     * is soft delete
+     * @var boolean
+     */
+    protected $isSoftDelete = false;
+    /**
+     * data transfrom
+     * @var arrau
+     */
+    protected $transform;
+    /**
+     * seeder data
+     * @var [type]
+     */
+    protected $seederObject;
+    /**
+     * seeder data insert, update
      * @var array
      */
-    protected $seederObject = [
-        'name' => 'bb'
-    ];
+    protected $seederObjectModel;
+    /**
+     * seeder data update
+     * @var array
+     */
+    protected $seederObjectUpdate;
 
     /**
      * number row to test
@@ -25,44 +58,54 @@ abstract class RestFull extends TestCase
     protected $initDataNumber = 10;
 
     /**
-     * data store not valid
-     * @return array
+     * is soft delete
+     * @var boolean
      */
-    abstract public function storeFailedDataProvider();
 
     /**
-     * data update not valid
+     * data store not valid
      * @return array
-     */
-    abstract public function updateFailedDataProvider();
+ */
+    abstract public function storeOrUpdateFailedDataProvider();
+
+    public function setUp()
+    {
+        // dd('kk');
+        parent::setUp();
+        $this->generateTestData();
+        // $this->authWithSupperAdmin();
+    }
 
     /**
      * create data for test by model factory & initDataNumber
-     * @author KingDarkness <nguyentranhoan13@gmail.com>
-     * @date   2018-10-16
-     * @return [type]     [description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
      */
-    public function setUp()
-    {
-        parent::setUp();
-        $this->generateTestData();
-            // $this->authWithSupperAdmin();
-    }
-
     protected function generateTestData()
     {
         factory($this->model, $this->initDataNumber)->create();
-        factory($this->model)->create($this->seederPosition);
+        factory($this->model)->create($this->seederObject);
     }
 
-    public function failedResponse()
+    public function failedResponse($errors = null)
     {
-        return [
-            'code',
-            'status',
-            'data',
-            'message'
-        ];
+        if ($errors == null) {
+            return [
+                'code',
+                'status',
+                'data',
+                'message'
+            ];
+        } else {
+            return [
+                'code',
+                'status',
+                'data' => [
+                    'errors' => $errors
+                ],
+                'message'
+            ];
+        }
     }
 
     public function deleteResponse()
@@ -75,15 +118,13 @@ abstract class RestFull extends TestCase
         ];
     }
 
-    public function successResponse($meta = true)
+    public function successResponse($transform, $meta = false)
     {
         if ($meta) {
             return [
                 'code',
                 'status',
-                'data'  => [
-                    $this->transform
-                ],
+                'data'  => $transform,
                 'meta'  => [
                     'pagination'
                 ]
@@ -92,27 +133,60 @@ abstract class RestFull extends TestCase
             return [
                 'code',
                 'status',
-                'data'  => $this->transform
+                'data'  => $transform
             ];
         }
     }
 
     /**
-     * Listting api with pagination
-     * should return 200
+     * [testListting description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testListting()
     {
         $this->json('GET', $this->endpoint)
         ->seeStatusCode(200)
-        ->seeJsonStructure($this->successResponse());
+        ->seeJsonStructure($this->successResponse([$this->transform], true));
 
-        $this->assertCount(11, $this->response->getData()->data);
+        $this->assertCount(12, $this->response->getData()->data);
     }
 
     /**
-     * show api not found
-     * should return 404
+     * [testListtingWithUnLimit not pagination]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
+     */
+    public function testListtingWithUnLimit()
+    {
+        $this->json('GET', $this->endpoint . '?' . http_build_query(['limit' => -1]))
+        ->seeStatusCode(200)
+        ->seeJsonStructure($this->successResponse([$this->transform]));
+
+        $this->assertCount(\DB::table($this->table)->count(), $this->response->getData()->data);
+    }
+
+    /**
+     * [testListtingSingle not pagination]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
+     */
+    public function testListtingSingle()
+    {
+        $this->json('GET', $this->endpoint . '?' . http_build_query(['limit' => 0]))
+        ->seeStatusCode(200)
+        ->seeJsonStructure($this->successResponse($this->transform));
+        $this->assertEquals(1, count($this->response->getData()->data));
+    }
+
+    /**
+     * [testShowNotFound description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testShowNotFound()
     {
@@ -124,50 +198,61 @@ abstract class RestFull extends TestCase
     }
 
     /**
-     * show api found
-     * should return 200
+     * [testShowSuccess description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testShowSuccess()
     {
         $this->json('GET', $this->endpoint . '/1')
         ->seeStatusCode(200)
-        ->seeJsonStructure($this->successResponse(false));
+        ->seeJsonStructure($this->successResponse($this->transform));
 
         $this->assertEquals(1, $this->response->getData()->data->id);
     }
 
     /**
-     * test store not valid data
-     * should return 422
-     * @dataProvider storeFailedDataProvider
+     * [testStoreFailed description]
+     * @dataProvider storeOrUpdateFailedDataProvider
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @param  [type]     $data   [description]
+     * @param  [type]     $errors [description]
+     * @return [type]             [description]
      */
     public function testStoreFailed($data, $errors)
     {
         $this->json('POST', $this->endpoint, $data)
         ->seeStatusCode(422)
-        ->seeJsonStructure($this->failedResponse());
+        ->seeJsonStructure($this->failedResponse($errors));
     }
 
     /**
-     * store sucess
-     * should return 200
+     * [testStoreSuccess description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testStoreSuccess()
-    {
-        $this->json('POST', $this->endpoint, $this->seederObject)
+    {        
+        $this->json('POST', $this->endpoint, $this->seederObjectModel)
         ->seeStatusCode(200)
-        ->seeJsonStructure($this->successResponse(false));
+        ->seeJsonStructure($this->successResponse($this->transform));
 
         $id_success   = \DB::table($this->table)->count();
-        $success_data = array_merge(['id' => $id_success], $this->seederObject);
+        $success_data = array_merge(['id' => $id_success], $this->seederObjectModel);
 
         $this->seeInDatabase($this->table, $success_data);
     }
 
     /**
-     * update not valid data
-     * should return 422
-     * @dataProvider updateFailedDataProvider
+     * @dataProvider storeOrUpdateFailedDataProvider
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @param  [type]     $data   [description]
+     * @param  [type]     $errors [description]
+     * @return [type]             [description]
      */
     public function testUpdateFailed($data, $errors)
     {
@@ -177,35 +262,41 @@ abstract class RestFull extends TestCase
     }
 
     /**
-     * update not found
-     * should return 404
+     * [testUpdateNotFound description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testUpdateNotFound()
     {
         $idNotFound = \DB::table($this->table)->count() + 1;
 
-        $this->json('PUT', $this->endpoint . '/' . $idNotFound, $this->seederObject)
+        $this->json('PUT', $this->endpoint . '/' . $idNotFound, $this->seederObjectModel)
         ->seeStatusCode(404)
         ->seeJsonStructure($this->failedResponse());
     }
 
     /**
-     * update success
-     * should return 200
+     * [testUpdateSuccess description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testUpdateSuccess()
     {
-        $this->json('PUT', $this->endpoint . '/1', $this->seederPositionUpdate)
+        $this->json('PUT', $this->endpoint . '/1', $this->seederObjectUpdate)
         ->seeStatusCode(200)
-        ->seeJsonStructure($this->successResponse(false));
+        ->seeJsonStructure($this->successResponse($this->transform));
 
-        $success_data = array_merge(['id' => 1], $this->seederPositionUpdate);
+        $success_data = array_merge(['id' => 1], $this->seederObjectUpdate);
         $this->seeInDatabase($this->table, $success_data);
     }
 
     /**
-     * delete not found
-     * should return 404
+     * [testDeleteNotFound description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testDeleteNotFound()
     {
@@ -217,8 +308,10 @@ abstract class RestFull extends TestCase
     }
 
     /**
-     * delete success
-     * should return 200
+     * [testDeleteSuccess description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testDeleteSuccess()
     {
@@ -226,26 +319,17 @@ abstract class RestFull extends TestCase
         ->seeStatusCode(200)
         ->seeJsonStructure($this->deleteResponse());
 
-        $this->notSeeInDatabase($this->table, [
-            'id' => 1
-        ]);
-        // if ($this->isSoftDelete) {
-        //     $object_soft_delete = \DB::table($this->table)->where('deleted_at', '!=', null)->find($object->id);
+        if ($this->isSoftDelete) {
+            $objectSoftDelete = \DB::table($this->table)->where('deleted_at', '!=', null)->find(1);
 
-        //     $this->assertFalse(empty($object_soft_delete));
+            $this->assertFalse(empty($objectSoftDelete));
 
-        // } else {
-        //     $this->notSeeInDatabase($this->table, [
-        //         'id'         => $object->id
-        //     ]);
-        // }
+        } else {
+            $this->notSeeInDatabase($this->table, [
+                'id' => 1
+            ]);
+        }
     }
-
-    /**
-     * is soft delete
-     * @var boolean
-     */
-    // protected $isSoftDelete = false;
 
     /**
      * module permission
@@ -347,46 +431,4 @@ abstract class RestFull extends TestCase
 
     //     $this->assertTrue(in_array($response->response->getStatusCode(), [200, 422]));
     // }
-
-
-    /**
-     * Listting api not pagination
-     * should return 200
-     */
-    // public function testListtingWithUnLimit()
-    // {
-    //     $params = [
-    //         'limit' => -1
-    //     ];
-
-    //     $this->json('GET', $this->endpoint . '?' . http_build_query($params), [], $this->headers)
-    //          ->seeStatusCode(200)
-    //          ->seeJsonStructure([
-    //             'code',
-    //             'status',
-    //             'data'  => [$this->transform]
-    //          ]);
-
-    //     $this->assertCount(\DB::table($this->table)->count(), $this->response->getData()->data);
-    // }
-
-    /**
-     * Listting api return none object
-     * should return 200
-     */
-    // public function testListtingSingle()
-    // {
-    //     $params = [
-    //         'limit' => 0
-    //     ];
-
-    //     $this->json('GET', $this->endpoint . '?' . http_build_query($params), [], $this->headers)
-    //          ->seeStatusCode(200)
-    //          ->seeJsonStructure([
-    //             'code',
-    //             'status',
-    //             'data'  => $this->transform
-    //          ]);
-    // }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace Tests\Feature\Api\Transformers;
 
 use TestCase;
 // use Tests\Traits\JWTAuth;
@@ -44,10 +44,12 @@ abstract class Transformer extends TestCase
 
     /**
      * create data for test by model factory
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     protected function geretateTestData()
     {
-        factory($this->model, 10)->create();
         factory($this->model)->create($this->seederObject);
     }
 
@@ -59,19 +61,21 @@ abstract class Transformer extends TestCase
 
     /**
      * Model is null
-     * @return [type] [description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
      */
     public function testTransformIsNull()
     {
-        // $this->authWithSupperAdmin();
         $this->json('GET', $this->endpoint . '?' . http_build_query($this->params_transform_is_null))
-              ->seeStatusCode(200)
-              ->seeJsonStructure([
-                'code',
-                'data'  => []
-            ]);
+        ->seeStatusCode(200)
+        ->seeJsonStructure([
+            'code',
+            'data'  => []
+        ]);
+        $relationship = $this->params_transform_is_null['include'];
 
-            $this->assertEquals(0, count($this->response->getData()->data));
+        $this->assertCount(0, $this->response->getData()->data->$relationship->data);
     }
 
     /**
@@ -81,27 +85,26 @@ abstract class Transformer extends TestCase
      * @param  [type] $params           array           params query request
      * @param  [type] $transform_part   array           transform of model belongsTo
      */
-    // public function testTransformer($info_factory , $params, $transform_part)
-    // {
-    //     // $this->authWithSupperAdmin();
+    public function testTransformer($info_factory , $params, $transform_part)
+    {
+        // $this->authWithSupperAdmin();
 
-    //     foreach ($info_factory as $key => $info) {
-    //         factory($info['class'], $info['init_data'])->create($info['value']);
-    //     }
+        factory($info_factory['class'], $info_factory['init_data'])->create($info_factory['value']);
 
-    //     $this->json('GET', $this->endpoint . '?' . http_build_query($params))
-    //           ->seeStatusCode(200)
-    //           ->seeJsonStructure([
-    //             'code',
-    //             'status',
-    //             'data'  => [
-    //                 array_merge($this->transform, $transform_part)
-    //             ],
-    //             'meta'  => [
-    //                 'pagination'
-    //             ]
-    //         ]);
-    //         // dd($this->response->getData()->data);
-    //     // $this->assertCount(1, $this->response->getData()->data);
-    // }
+        $this->json('GET', $this->endpoint . '?' . http_build_query($params))
+        ->seeStatusCode(200)
+        ->seeJsonStructure([
+            'code',
+            'status',
+            'data'  => [
+                array_merge($this->transform, $transform_part)
+            ],
+            'meta'  => [
+                'pagination'
+            ]
+        ]);
+        $relationship = $this->params_transform_is_null['include'];
+
+        $this->assertEquals($info_factory['init_data'], count($this->response->getData()->data[0]->$relationship->data));
+    }
 }

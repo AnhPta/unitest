@@ -108,24 +108,19 @@ class PositionController extends ApiController
         }
     }
 
-    // public function changeStatus($id)
-    // {
-    //     try {
+    public function changeStatus($id)
+    {
+        try {
             // $this->authorize('position.update');
-    //         $data = $this->position->changeStatus($id);
+            $data = $this->position->changeStatus($id);
 
-    //         return $this->successResponse($data);
-    //     } catch (\Illuminate\Validation\ValidationException $validationException) {
-    //         return $this->errorResponse([
-    //             'errors' => $validationException->validator->errors(),
-    //             'exception' => $validationException->getMessage()
-    //         ]);
-    //     } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-    //         return $this->notFoundResponse();
-    //     } catch (\Exception $e) {
-    //         throw $e;
-    //     } catch (\Throwable $t) {
-    //         throw $t;
-    //     }
-    // }
+            return $this->successResponse($data);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return $this->notFoundResponse();
+        } catch (\Exception $e) {
+            throw $e;
+        } catch (\Throwable $t) {
+            throw $t;
+        }
+    }
 }

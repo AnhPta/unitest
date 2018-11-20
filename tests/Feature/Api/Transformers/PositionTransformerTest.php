@@ -1,16 +1,11 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace Tests\Feature\Api\Transformers;
 
 class PositionTransformerTest extends Transformer
 {
     protected $endpoint = '/api/positions';
     protected $model    = \App\Repositories\Positions\Position::class;
-    protected $params_transform_is_null = [
-        // 'include'   => 'cities',
-        'limit'     => 0,
-        'q'         => 'qlinhtinh'
-    ];
     protected $seederObject = [
         'name'       => 'bb',
     ];
@@ -21,15 +16,18 @@ class PositionTransformerTest extends Transformer
         'created_at',
         'updated_at'
     ];
-
-    protected $transformPosition = [
-        'id',
-        'name',
-        'status',
-        'created_at',
-        'updated_at'
+    protected $params_transform_is_null = [
+        // 'include'   => 'cities',
+        'limit'     => 0,
+        'q'         => 'filterlinhtinh'
     ];
 
+    /**
+     * [belongsToDataProvider description]
+     * @author AnhPta <tuananhsc96@gmail.com>
+     * @date   2018-11-17
+     * @return [type]     [description]
+     */
     // public function belongsToDataProvider()
     // {
     //     return [

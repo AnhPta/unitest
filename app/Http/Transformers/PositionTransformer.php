@@ -9,7 +9,7 @@ use App\Repositories\Departments\DepartmentRepository;
 class PositionTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
-        'employees'
+        // 'employees'
     ];
 
     public function transform(Position $position = null)
@@ -27,20 +27,20 @@ class PositionTransformer extends TransformerAbstract
             'updated_at' => $position->updated_at,
         ];
 
-        if ($position->pivot && $position->pivot->department_id) {
-            $data['department_id'] = $position->pivot->department_id;
-            $data['department_name'] = app()->make(DepartmentRepository::class)->getById($data['department_id'])->name;
-        }
+        // if ($position->pivot && $position->pivot->department_id) {
+        //     $data['department_id'] = $position->pivot->department_id;
+        //     $data['department_name'] = app()->make(DepartmentRepository::class)->getById($data['department_id'])->name;
+        // }
 
         return $data;
     }
 
-    public function includeEmployees(Position $position = null)
-    {
-        if (is_null($position)) {
-            return $this->null();
-        }
+    // public function includeEmployees(Position $position = null)
+    // {
+    //     if (is_null($position)) {
+    //         return $this->null();
+    //     }
 
-        return $this->collection($position->employees, new EmployeeTransformer);
-    }
+    //     return $this->collection($position->employees, new EmployeeTransformer);
+    // }
 }

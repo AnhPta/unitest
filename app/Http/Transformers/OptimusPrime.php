@@ -21,8 +21,8 @@ class OptimusPrime
 
     public function parseIncludes()
     {
-        if (isset($_GET['include'])) {
-            $this->m->parseIncludes($_GET['include']);
+        if (app('request')->input('include', null)) {
+            $this->m->parseIncludes(app('request')->input('include'));
         }
     }
 

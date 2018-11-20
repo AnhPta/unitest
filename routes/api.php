@@ -33,11 +33,27 @@ $router->group([
 
     // resource('/positions', 'PositionController', $router);
 });
-    $router->get('/positions', 'PositionController@index');
-    $router->get('/positions/{id}', 'PositionController@show');
-    $router->post('/positions', 'PositionController@store');
-    $router->put('/positions/{id}', 'PositionController@update');
-    $router->delete('/positions/{id}', 'PositionController@destroy');
+$router->get('/positions', 'PositionController@index');
+$router->get('/positions/{id}', 'PositionController@show');
+$router->post('/positions', 'PositionController@store');
+$router->put('/positions/{id}', 'PositionController@update');
+$router->delete('/positions/{id}', 'PositionController@destroy');
+
+$router->get('/branches', 'BranchController@index');
+$router->get('/branches/{id}', 'BranchController@show');
+$router->post('/branches', 'BranchController@store');
+$router->put('/branches/{id}', 'BranchController@update');
+$router->delete('/branches/{id}', 'BranchController@destroy');
+
+$router->get('/departments', 'DepartmentController@index');
+$router->get('/departments/{id}', 'DepartmentController@show');
+$router->post('/departments', 'DepartmentController@store');
+$router->put('/departments/{id}', 'DepartmentController@update');
+$router->delete('/departments/{id}', 'DepartmentController@destroy');
+
+$router->put('/branches/change-status/{id}', 'BranchController@changeStatus');
+$router->put('/departments/change-status/{id}', 'DepartmentController@changeStatus');
+$router->put('/positions/change-status/{id}', 'PositionController@changeStatus');
 
 $router->post('login', 'LoginController@login');
 $router->post('register', 'RegisterController@register');
